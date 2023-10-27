@@ -20,7 +20,7 @@ class LoginMenu:
                     if option == 1:
                         self.registerProduct()
                     elif option == 2:
-                        print("option 2")
+                        self.deleteProduct()
                     elif option == 3:
                         self.listOfProducts()
                     elif option == 4:
@@ -50,6 +50,17 @@ class LoginMenu:
 
         def listOfUsers(self):
              userSvc.listUsers()
+
+        def deleteProduct(self):
+             print("\n<== Delete a product ==>\n")
+             idProductToDelete = input("Enter Id or reference of product: ")
+
+             success = productSvc.deleteProduct(idProductToDelete)
+
+             if success:
+                print(f"\n<== Product with ID {idProductToDelete} has been deleted ==>\n")
+             else:
+                print(f"\n<== Product with ID {idProductToDelete} not found or could not be deleted ==>\n")
 
 
 

@@ -7,15 +7,15 @@ class UserService:
     def registerUser(self, user):
         if isinstance(user, User):
           self.users.append(user)
-          print("\n<== Usuario registrado con éxito. ==>")
+          print("\n<== User registered successfully. ==>")
         else:
-          print("Error: Se esperaba un objeto de tipo User.")
+          print("Error: An object of type User was expected.")
 
     def listUsers(self):
         if not self.users:
-            print("\n <== No hay usuarios registrados. ==>")
+            print("\n <== No users founded. ==>")
         else:
-            print("\n<== Lista de Usuarios ==>\n")
+            print("\n<== List of Users ==>\n")
             for user in self.users:
                 print(f"Id Persona: {user.idPerson}")
                 print(f"Nacionalidad: {user.nationality}")

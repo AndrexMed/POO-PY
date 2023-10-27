@@ -22,3 +22,10 @@ class ProductService:
                 print(f"Price: {product.price}")
                 print(f"Taxes: {product._taxes}")
                 print("-" * 20)
+
+    def deleteProduct(self, idProduct):
+        for product in self.products:
+            if product.idProduct == idProduct:
+                self.products.remove(product)
+                return True
+        return False
