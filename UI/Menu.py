@@ -17,6 +17,10 @@ class Menu:
             },
             {
                 "number": 3,
+                "text": "List of users"
+            },
+            {
+                "number": 4,
                 "text": "Exit"
             }
         ]
@@ -36,6 +40,8 @@ class Menu:
               elif choice == 2:
                 self.register()
               elif choice == 3:
+                self.listOfUsers()
+              elif choice == 4:
                 print("\n<== Good bye ==>\n")
                 break
               else:
@@ -54,18 +60,25 @@ class Menu:
           loginMenu = LoginMenu()
           loginMenu.loginMenu(userName)
        else:
-          print("\n<== Credentials are no valid ==>\n")
+          print("\n<== Credentials are no valid ==>")
     
     def register(self):
+       idPerson = input("Enter Id Person: ")
+       nationality = input("Enter your nationality: ")
        fullName = input("Enter your full name: ")
        userName = input("Enter your userName: ")
        password = input("Enter your password: ")
 
        user = User()
+       user.idPerson = idPerson
+       user.nationality = nationality
        user.fullname = fullName
        user.username = userName
        user.password = password
 
        userService.registerUser(user)
+
+    def listOfUsers(self):
+       userService.listUsers()
 
 

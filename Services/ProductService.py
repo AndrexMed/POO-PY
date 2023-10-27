@@ -13,11 +13,12 @@ class ProductService:
 
     def listProducts(self):
         if not self.products:
-            print("No hay productos registrados.")
+            print("\n<== No hay productos registrados ==>\n")
         else:
             print("\n<== Lista de Productos ==>\n")
             for product in self.products:
+                print(f"IdProduct: {product.idProduct}")
                 print(f"Title: {product.title}")
                 print(f"Price: {product.price}")
-                print(f"Taxes: {product.taxes}")
+                print(f"Taxes: {product._taxes}")
                 print("-" * 20)

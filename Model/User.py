@@ -1,5 +1,8 @@
-class User:
+from Model.Person import Person
+
+class User(Person):
     def __init__(self):
+        super().__init__()
         self._fullname = None
         self._username = None
         self._password = None

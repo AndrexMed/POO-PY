@@ -2,4 +2,4 @@ from UI.Menu import Menu
 
 showMenu = Menu()
 
-showMenu.showMenu()
+showMenu.showMenu() 
