@@ -12,7 +12,8 @@ class LoginMenu:
                 print("1. Register product")
                 print("2. Delete product")
                 print("3. List of products")
-                print("4. Exit")
+                print("4. Total price all products")
+                print("5. Exit")
 
                 try:
                     option = int(input("Select a option: "))
@@ -24,6 +25,8 @@ class LoginMenu:
                     elif option == 3:
                         self.listOfProducts()
                     elif option == 4:
+                        self.totalPriceProducts()
+                    elif option == 5:
                         print("\n<== Good bye ==>\n")
                         break
                     else:
@@ -36,8 +39,11 @@ class LoginMenu:
             print("\n<== Register a product ==>\n")
             idProduct = input("Enter a id product: ")
             title = input("Enter name of product: ")
-            price = float(input("Enter price of product: "))
 
+            try:
+              price = float(input("Enter price of product: "))
+            except ValueError:
+                print("Enter a price valid...")
             product = Product()
             product.idProduct = idProduct
             product.title = title
@@ -62,8 +68,11 @@ class LoginMenu:
              else:
                 print(f"\n<== Product with ID {idProductToDelete} not found or could not be deleted ==>\n")
 
-
-
+        def totalPriceProducts(self):
+             total = productSvc.calculate_total_price()
+             if (total):
+                print(f"\n<== Total price of products ==>${total}\n")
+             return
 
 
         

@@ -29,3 +29,11 @@ class ProductService:
                 self.products.remove(product)
                 return True
         return False
+    
+    def calculate_total_price(self):
+        if not self.products:
+            print("\n<== No hay productos registrados ==>\n")
+            return 0
+
+        total_price = sum(product.price for product in self.products)
+        return total_price
